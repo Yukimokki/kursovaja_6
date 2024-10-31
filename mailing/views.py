@@ -11,6 +11,4 @@ class ClientListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        for product in context["client_list"]:
-            product.active_version = product.versions.filter(is_current=True).first()
         return context
