@@ -9,8 +9,8 @@ import mailing
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mailing.views.home, name="home"),
-    #path('mailing/', include(("mailing.urls", "mailing"), namespace = 'mailing')),
-    path('mailing/', include("mailing.urls", namespace="mailing"))
+    path('mailing/', include("mailing.urls", namespace="mailing")),
+    path("users/", include('users.urls', namespace='users'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
