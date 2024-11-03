@@ -1,0 +1,29 @@
+{% extends 'mailing/home.html' %}
+{% block content %}
+ <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for mail in object_list %}
+        <div class="col">
+          <div class="card shadow-sm">
+
+            <img src="" alt="">
+            <div class="card-body">
+              <h5 class="card-title" > Mailing name: {{ mail.name }} </h5>
+              <h6 class="card-title" >  {{mail.Clients}} </h6>
+                <p class="card-text" > Type: {{ mail.type }} </p>
+
+                <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-primary" href="{% url 'mailing:Mailing_detail' mail.pk %}" role="button">View</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+          </div>
+        </div>
+      </div>
+{% endblock %}

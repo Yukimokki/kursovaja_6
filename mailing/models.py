@@ -49,7 +49,7 @@ class Mailing(models.Model):
         ("long_read", "full text in the mailing"),
     ]
 
-    name = models.TextField(verbose_name="mailing name", **NULLABLE)
+    name = models.CharField(max_length=100, verbose_name="mailing name", **NULLABLE)
     type = models.TextField(verbose_name="mailing type", choices=TYPE_CHOICES, **NULLABLE)
 
     message = models.ForeignKey(Mailing_Message, on_delete=models.CASCADE, verbose_name="Message")

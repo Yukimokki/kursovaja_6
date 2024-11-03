@@ -1,14 +1,15 @@
   <h5 class="my-0 mr-md-auto font-weight-normal">Welcome User </h5>
     <nav class="ms-5">
-        <a class="p-2 btn btn-outline-primary" href="">Clients</a>
-        <a class="p-2 btn btn-outline-primary" href="">Mailing lists</a>
+        <a class="p-2 btn btn-outline-primary" href="{% url 'mailing:Client_list' %}">Clients</a>
+        <a class="p-2 btn btn-outline-primary" href="{% url 'mailing:Mailing_list' %}">Mailing lists</a>
         <a class="p-2 btn btn-outline-primary" href="">Mailing reports</a>
         {% if user.is_authenticated %}
-        <a class="p-2 btn btn-outline-primary" href="">Logout</a>
+        <a class="p-2 btn btn-outline-primary" href="#">Logout</a>
         {% else %}
-        <a class="p-2 btn btn-outline-primary" href="">Registration</a>
-        <a class="p-2 btn btn-outline-primary" href="">Login</a>
+        <a class="p-2 btn btn-outline-primary" href="#">Registration</a>
+        <a class="p-2 btn btn-outline-primary" href="#">Login</a>
         {% endif %}
+        <a class="p-2 btn btn-outline-primary" href="{% url 'home' %}"> Home </a>
 
     </nav>
 
